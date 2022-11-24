@@ -6,11 +6,11 @@ const addnumbers = (number1, number2) => {
     var num1 = parseInt(number1)
     var num2 = parseInt(number2)
     var res = num1+num2;
-    return result
+    return res
 
 }
 
-app.get("/add two numbers", (req,res) => {
+app.get("/addtwonumbers", (req,res) => {
     var number1 = req.query.number1;
     var number2 = req.query.number2;
     var result = addnumbers(number1, number2)
