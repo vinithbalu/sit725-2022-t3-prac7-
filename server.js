@@ -12,7 +12,7 @@ const { MongoClient } = require('mongodb');
 
 
 // Connection URL
-const url = 'mongodb+srv://vinithmongo:vinith@cluster0.zalljvf.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://vinithmongo:vinith@cluster0.myzfqd5.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(url);
 
 
