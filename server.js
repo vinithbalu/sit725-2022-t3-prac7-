@@ -1,7 +1,7 @@
 var express = require("express")
 var app = express()
 var cors = require('cors');
-let projectcollection;
+// let projectcollection;
 let http = require('http').createServer(app);
 let io =require('socket.io')(http);
 
@@ -49,16 +49,7 @@ app.post('/api/projects',(req,res) => {
         }
     })
 })
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-  setInterval(()=>{
-    socket.emit('number', parseInt(Math.random()*10));
-  }, 1000);
 
-});
 const cardList = [
     {
         title: "Kitten 2",
@@ -90,6 +81,17 @@ app.get('/api/projects',(req,res) => {
         }
     })
 })
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+    setInterval(()=>{
+      socket.emit('number', parseInt(Math.random()*10));
+    }, 1000);
+  
+  });
 
 var port = process.env.port || 3000;
 
